@@ -6,7 +6,7 @@ namespace Hollox.BlazorEcommerce.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private static List<Product> Products = new List<Product>
+        private static readonly List<Product> Products = new()
         {
             new Product
             {
@@ -35,7 +35,7 @@ namespace Hollox.BlazorEcommerce.Server.Controllers
         };
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts()
         {
             return Ok(Products);
         }

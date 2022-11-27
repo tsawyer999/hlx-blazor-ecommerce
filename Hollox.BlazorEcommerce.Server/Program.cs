@@ -29,12 +29,15 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwaggerUI();
+
     app.UseWebAssemblyDebugging();
+
+    app.UseSwagger();
 }
 else
 {
@@ -43,7 +46,6 @@ else
     app.UseHsts();
 }
 
-app.UseSwagger();
 app.UseHttpsRedirection();
 
 app.UseBlazorFrameworkFiles();
