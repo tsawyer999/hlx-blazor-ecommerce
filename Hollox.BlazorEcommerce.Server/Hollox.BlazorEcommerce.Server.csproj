@@ -24,5 +24,9 @@
     <ProjectReference Include="..\Hollox.BlazorEcommerce.Shared\Hollox.BlazorEcommerce.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>

@@ -1,10 +1,14 @@
-global using Hollox.BlazorEcommerce.Shared;
+using Hollox.BlazorEcommerce.Server.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<ECommerceDataContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HolloxECommerce"));
+});
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
