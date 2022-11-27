@@ -1,4 +1,5 @@
 ﻿using Hollox.BlazorEcommerce.Server.Data;
+using Hollox.BlazorEcommerce.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Hollox.BlazorEcommerce.Shared;
 using Microsoft.EntityFrameworkCore;
@@ -9,19 +10,17 @@ namespace Hollox.BlazorEcommerce.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ECommerceDataContext _context;
+        private readonly IProductService _productService;
 
-        public ProductController(ECommerceDataContext context)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
-            var product = await _context.Products.ToListAsync();
-
-            return Ok(product);
+            return Ok(await _productService.GetProductsAsync());
         }
     }
 }
