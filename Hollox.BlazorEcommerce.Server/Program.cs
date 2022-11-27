@@ -1,4 +1,4 @@
-global using Microsoft.EntityFrameworkCore;
+global using Hollox.BlazorEcommerce.Shared;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
