@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text.Json;
 using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Hollox.BlazorEcommerce.Client
 {
