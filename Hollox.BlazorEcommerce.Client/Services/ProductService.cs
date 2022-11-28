@@ -5,6 +5,7 @@ namespace Hollox.BlazorEcommerce.Client.Services;
 
 public class ProductService : IProductService
 {
+    private const string ECommerceApiBaseURl = "https://localhost:7226";
     private readonly HttpClient _http;
 
     public ProductService(HttpClient http)
@@ -16,7 +17,7 @@ public class ProductService : IProductService
     {
         try
         {
-            var products = await _http.GetFromJsonAsync<List<Product>>("https://localhost:7226/api/product") ?? new List<Product>();
+            var products = await _http.GetFromJsonAsync<List<Product>>($"{ECommerceApiBaseURl}/api/product") ?? new List<Product>();
 
             return products;
         }
@@ -24,6 +25,19 @@ public class ProductService : IProductService
         {
             Console.WriteLine($"Error: {ex.Message}");
             return new List<Product>();
+        }
+    }
+
+    public async Task<Product?> GetProductById(int id)
+    {
+        try
+        {
+            return await _http.GetFromJsonAsync<Product>($"{ECommerceApiBaseURl}/api/product/{id}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            return null;
         }
     }
 }

@@ -20,4 +20,16 @@ public class ProductController : ControllerBase
     {
         return Ok(await _productService.GetProductsAsync());
     }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Product?>> GetProductById(int id)
+    {
+        var product = await _productService.GetProductById(id);
+        if (product == null)
+        {
+            return NotFound("Product not found");
+        }
+
+        return Ok(product);
+    }
 }
