@@ -13,7 +13,13 @@ else
 		<div class="media-body">
 			<h2 class="mb-0">@Product.Title</h2>
 			<p>@Product.Description</p>
-			<h4 class="price">$</h4>
+			<select class="form-control" @bind="CurrentTypeId">
+				@foreach (var variant in Product.Variants)
+				{
+					<option value=@variant.ProductTypeId>@variant.ProductType.Name</option>
+				}
+			</select>
+			<h4 class="price">@CurrentTypeId</h4>
 		</div>
 	</div>
 }

@@ -25,4 +25,34 @@ public partial class ProductList
             Products = await ProductService.GetProductsByCategorySlugAsync(CategorySlug);
         }
     }
+
+    protected string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        if (variants.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        if (variants.Count == 1)
+        {
+            return $"{variants[0].Price} $";
+        }
+
+        var minPrice = 0m;
+        var maxPrice = 0m;
+        foreach (var variant in product.Variants)
+        {
+            if (variant.Price < minPrice)
+            {
+                minPrice = variant.Price;
+            }
+            else if (variant.Price > maxPrice)
+            {
+                maxPrice = variant.Price;
+            }
+        }
+
+        return $"Start from {minPrice:C} $ to {maxPrice:C} $";
+    }
 }

@@ -15,7 +15,9 @@ public class ProductService : IProductService
 
     public async Task<List<Product>> GetProductsAsync()
     {
-        return await _context.Products.ToListAsync();
+        return await _context.Products
+            .Include(p => p.Variants)
+            .ToListAsync();
     }
 
     public async Task<List<Product>> GetProductsByCategorySlugAsync(string slug)
@@ -23,11 +25,15 @@ public class ProductService : IProductService
         return await _context.Products
             .Include(p => p.Category)
             .Where(p => p.Category!.Slug == slug)
+            .Include(p => p.Variants)
             .ToListAsync();
     }
 
     public async Task<Product?> GetProductById(int productId)
     {
-        return await _context.Products.FindAsync(productId);
+        return await _context.Products
+            .Include(p => p.Variants)
+            .ThenInclude(v => v.ProductType)
+            .FirstOrDefaultAsync(p => p.Id == productId);
     }
 }
