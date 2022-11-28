@@ -20,19 +20,19 @@ namespace Hollox.BlazorEcommerce.Server.Data
                 {
                     Id = 1,
                     Name = "Books",
-                    Url = "books"
+                    Slug = "books"
                 },
                 new Category
                 {
                     Id = 2,
                     Name = "Movies",
-                    Url = "movies"
+                    Slug = "movies"
                 },
                 new Category
                 {
                     Id = 3,
                     Name = "Video Games",
-                    Url = "video-games"
+                    Slug = "video-games"
                 }
             );
 

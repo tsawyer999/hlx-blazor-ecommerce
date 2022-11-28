@@ -16,7 +16,7 @@ namespace Hollox.BlazorEcommerce.Client.Pages
 
         protected override async Task OnParametersSetAsync()
         {
-            Product = await ProductService.GetProductById(Id);
+            Product = await ProductService.GetProductByIdAsync(Id);
         }
     }
 }

@@ -9,10 +9,20 @@ public partial class ProductList
     [Inject]
     private IProductService ProductService { get; set; } = default!;
 
+    [Parameter]
+    public string CategorySlug { get; set; }
+
     protected List<Product> Products = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
-        Products = await ProductService.GetProducts();
+        if (string.IsNullOrWhiteSpace(CategorySlug))
+        {
+            Products = await ProductService.GetProductsAsync();
+        }
+        else
+        {
+            Products = await ProductService.GetProductsByCategorySlugAsync(CategorySlug);
+        }
     }
 }

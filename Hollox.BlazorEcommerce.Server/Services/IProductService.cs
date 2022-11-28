@@ -5,5 +5,6 @@ namespace Hollox.BlazorEcommerce.Server.Services;
 public interface IProductService
 {
     Task<List<Product>> GetProductsAsync();
-    Task<Product?> GetProductById(int id);
+    Task<List<Product>> GetProductsByCategorySlugAsync(string slug);
+    Task<Product?> GetProductById(int productId);
 }

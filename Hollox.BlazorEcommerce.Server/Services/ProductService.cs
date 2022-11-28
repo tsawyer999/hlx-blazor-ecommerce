@@ -18,8 +18,16 @@ public class ProductService : IProductService
         return await _context.Products.ToListAsync();
     }
 
-    public async Task<Product?> GetProductById(int id)
+    public async Task<List<Product>> GetProductsByCategorySlugAsync(string slug)
     {
-        return await _context.Products.FindAsync(id);
+        return await _context.Products
+            .Include(p => p.Category)
+            .Where(p => p.Category!.Slug == slug)
+            .ToListAsync();
+    }
+
+    public async Task<Product?> GetProductById(int productId)
+    {
+        return await _context.Products.FindAsync(productId);
     }
 }
