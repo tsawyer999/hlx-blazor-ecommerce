@@ -7,7 +7,6 @@ namespace Hollox.BlazorEcommerce.Client.Pages;
 public partial class ProductDetails
 {
     protected Product? Product;
-    protected int CurrentTypeId;
     protected ProductVariant? SelectedVariant;
 
     [Inject]
@@ -19,8 +18,7 @@ public partial class ProductDetails
     protected override async Task OnParametersSetAsync()
     {
         Product = await ProductService.GetProductByIdAsync(Id);
-        var firstVariant = Product?.Variants.FirstOrDefault();
-        CurrentTypeId = firstVariant?.ProductTypeId ?? -1;
+        SelectedVariant = Product?.Variants.FirstOrDefault();
     }
 
     protected void OnProductVariantChange(ChangeEventArgs e)

@@ -13,13 +13,37 @@ else
 		<div class="media-body">
 			<h2 class="mb-0">@Product.Title</h2>
 			<p>@Product.Description</p>
-			<select class="form-control" @onchange="OnProductVariantChange">
-				@foreach (var variant in Product.Variants)
+			@if (Product.Variants.Count > 1)
+			{
+				<select class="form-control" @onchange="OnProductVariantChange">
+					@foreach (var variant in Product.Variants)
+					{
+						<option value=@variant.ProductTypeId>@variant.ProductType.Name</option>
+					}
+				</select>
+			}
+			else if (Product.Variants.Count == 1)
+			{
+				<div><b>@Product.Variants[0].ProductType.Name</b></div>
+			}
+			else
+			{
+				<div><b>Product does not have any variant</b></div>
+			}
+			@if (SelectedVariant != null)
+			{
+				@if (SelectedVariant.OriginalPrice > SelectedVariant.Price)
 				{
-					<option value=@variant.ProductTypeId>@variant.ProductType.Name</option>
+					<h6 class="text-muted original-price">
+						$ @SelectedVariant.OriginalPrice
+					</h6>
+					<h4 class="price">$ @SelectedVariant.Price</h4>
 				}
-			</select>
-			<h4 class="price">@SelectedVariant?.Price</h4>
+				else
+				{
+					<h4 class="price">$ @SelectedVariant.Price</h4>
+				}
+			}
 		</div>
 	</div>
 }
