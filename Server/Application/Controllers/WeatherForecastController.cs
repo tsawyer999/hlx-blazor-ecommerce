@@ -1,7 +1,7 @@
 using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Hollox.BlazorEcommerce.Server.Controllers
+namespace Hollox.BlazorEcommerce.Application.Controllers
 {
     [ApiController]
     [Route("[controller]")]

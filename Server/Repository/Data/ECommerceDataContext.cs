@@ -1,7 +1,7 @@
 ﻿using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Hollox.BlazorEcommerce.Server.Data
+namespace Hollox.BlazorECommerce.Repository.Data
 {
     public class ECommerceDataContext : DbContext
     {

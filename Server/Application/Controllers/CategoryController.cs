@@ -1,8 +1,8 @@
-﻿using Hollox.BlazorEcommerce.Server.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Hollox.BlazorECommerce.Business.Services;
 using Hollox.BlazorEcommerce.Shared.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Hollox.BlazorEcommerce.Server.Controllers;
+namespace Hollox.BlazorEcommerce.Application.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

@@ -1,8 +1,8 @@
 ﻿using Hollox.BlazorEcommerce.Shared.Models;
 
-namespace Hollox.BlazorECommerce.Repository.Repositories;
+namespace Hollox.BlazorECommerce.Business.Services;
 
-public interface IProductRepository
+public interface IProductService
 {
     Task<List<Product>> GetProductsAsync();
     Task<List<Product>> GetProductsByCategorySlugAsync(string slug);

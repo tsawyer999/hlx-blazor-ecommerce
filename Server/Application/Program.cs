@@ -1,5 +1,6 @@
-using Hollox.BlazorEcommerce.Server.Data;
-using Hollox.BlazorEcommerce.Server.Services;
+using Hollox.BlazorECommerce.Business.Services;
+using Hollox.BlazorECommerce.Repository.Data;
+using Hollox.BlazorECommerce.Repository.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -27,7 +28,10 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

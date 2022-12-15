@@ -1,14 +1,14 @@
-﻿using Hollox.BlazorEcommerce.Server.Data;
+﻿using Hollox.BlazorECommerce.Repository.Data;
 using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Hollox.BlazorEcommerce.Server.Services;
+namespace Hollox.BlazorECommerce.Repository.Repositories;
 
-public class CategoryService : ICategoryService
+public class CategoryRepository : ICategoryRepository
 {
     private readonly ECommerceDataContext _context;
 
-    public CategoryService(ECommerceDataContext context)
+    public CategoryRepository(ECommerceDataContext context)
     {
         _context = context;
     }
