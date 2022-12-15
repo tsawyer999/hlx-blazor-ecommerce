@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Shared", "Shared\Hollox.BlazorEcommerce.Shared.csproj", "{7327DED8-A541-4702-9A5E-712B49231C8B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Application", "Server\Application\Hollox.BlazorEcommerce.Application.csproj", "{3BB8E06F-4145-434D-BD9F-3B8AD796D477}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorECommerce.Business", "Server\Business\Hollox.BlazorECommerce.Business.csproj", "{9A94E73F-DCE7-4EA3-AD8C-8C8F1669FF2B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorECommerce.Repository", "Server\Repository\Hollox.BlazorECommerce.Repository.csproj", "{C0D60AA9-EA3B-40C4-B042-E9692946DAEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Shared.ViewModel", "Shared\ViewModel\Hollox.BlazorEcommerce.Shared.ViewModel.csproj", "{51904A46-5D2E-4EF3-A1E0-4B2D3EA17EDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7327DED8-A541-4702-9A5E-712B49231C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7327DED8-A541-4702-9A5E-712B49231C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7327DED8-A541-4702-9A5E-712B49231C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7327DED8-A541-4702-9A5E-712B49231C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BB8E06F-4145-434D-BD9F-3B8AD796D477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BB8E06F-4145-434D-BD9F-3B8AD796D477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB8E06F-4145-434D-BD9F-3B8AD796D477}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{C0D60AA9-EA3B-40C4-B042-E9692946DAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0D60AA9-EA3B-40C4-B042-E9692946DAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0D60AA9-EA3B-40C4-B042-E9692946DAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51904A46-5D2E-4EF3-A1E0-4B2D3EA17EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51904A46-5D2E-4EF3-A1E0-4B2D3EA17EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51904A46-5D2E-4EF3-A1E0-4B2D3EA17EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51904A46-5D2E-4EF3-A1E0-4B2D3EA17EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

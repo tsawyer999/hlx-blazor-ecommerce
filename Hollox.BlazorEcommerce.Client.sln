@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Shared", "Shared\Hollox.BlazorEcommerce.Shared.csproj", "{DD4DAF82-00C8-4217-9026-60920FD34049}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Client", "Client\Hollox.BlazorEcommerce.Client.csproj", "{3B74CF9D-34C3-4AEE-A949-C725CCAFDAB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hollox.BlazorEcommerce.Shared.ViewModel", "Shared\ViewModel\Hollox.BlazorEcommerce.Shared.ViewModel.csproj", "{A25183CE-8FC6-4119-811B-DA31CE974DDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD4DAF82-00C8-4217-9026-60920FD34049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD4DAF82-00C8-4217-9026-60920FD34049}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD4DAF82-00C8-4217-9026-60920FD34049}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD4DAF82-00C8-4217-9026-60920FD34049}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B74CF9D-34C3-4AEE-A949-C725CCAFDAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B74CF9D-34C3-4AEE-A949-C725CCAFDAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B74CF9D-34C3-4AEE-A949-C725CCAFDAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B74CF9D-34C3-4AEE-A949-C725CCAFDAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A25183CE-8FC6-4119-811B-DA31CE974DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25183CE-8FC6-4119-811B-DA31CE974DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25183CE-8FC6-4119-811B-DA31CE974DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25183CE-8FC6-4119-811B-DA31CE974DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

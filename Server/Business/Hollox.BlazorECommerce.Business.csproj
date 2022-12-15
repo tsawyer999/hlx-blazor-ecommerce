@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\Hollox.BlazorEcommerce.Shared.csproj" />
+    <ProjectReference Include="..\..\Shared\ViewModel\Hollox.BlazorEcommerce.Shared.ViewModel.csproj" />
     <ProjectReference Include="..\Repository\Hollox.BlazorECommerce.Repository.csproj" />
   </ItemGroup>
 
