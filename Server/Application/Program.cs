@@ -51,14 +51,10 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerUI();
-
     app.UseWebAssemblyDebugging();
-
     app.UseSwagger();
 }
 else
@@ -78,8 +74,6 @@ app.UseCors(allowedOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 
-//app.MapRazorPages();
 app.MapControllers();
-//app.MapFallbackToFile("index.html");
 
 app.Run();
