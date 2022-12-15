@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Hollox.BlazorEcommerce.Shared;
+namespace Hollox.BlazorEcommerce.Shared.Models;
 
 public class ProductVariant
 {

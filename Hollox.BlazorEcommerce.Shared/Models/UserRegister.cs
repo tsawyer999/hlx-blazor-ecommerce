@@ -1,4 +1,4 @@
-﻿namespace Hollox.BlazorEcommerce.Shared;
+﻿namespace Hollox.BlazorEcommerce.Shared.Models;
 
 internal class UserRegister
 {

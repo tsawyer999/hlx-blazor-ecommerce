@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hollox.BlazorEcommerce.Client\Hollox.BlazorEcommerce.Client.csproj" />
     <ProjectReference Include="..\Hollox.BlazorEcommerce.Shared\Hollox.BlazorEcommerce.Shared.csproj" />
   </ItemGroup>
 

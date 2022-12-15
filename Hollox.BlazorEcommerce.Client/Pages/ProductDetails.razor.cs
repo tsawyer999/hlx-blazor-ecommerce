@@ -1,5 +1,5 @@
 ﻿using Hollox.BlazorEcommerce.Client.Services;
-using Hollox.BlazorEcommerce.Shared;
+using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace Hollox.BlazorEcommerce.Client.Pages;

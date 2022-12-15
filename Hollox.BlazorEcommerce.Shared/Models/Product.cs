@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Hollox.BlazorEcommerce.Shared;
+﻿namespace Hollox.BlazorEcommerce.Shared.Models;
 
 public class Product
 {

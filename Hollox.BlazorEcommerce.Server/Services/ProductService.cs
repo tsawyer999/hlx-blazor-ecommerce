@@ -1,5 +1,5 @@
 ﻿using Hollox.BlazorEcommerce.Server.Data;
-using Hollox.BlazorEcommerce.Shared;
+using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hollox.BlazorEcommerce.Server.Services;
@@ -35,5 +35,25 @@ public class ProductService : IProductService
             .Include(p => p.Variants)
             .ThenInclude(v => v.ProductType)
             .FirstOrDefaultAsync(p => p.Id == productId);
+    }
+
+    public async Task<ProductSearch> GetProductsBySearchTerm(string term, int page, int size)
+    {
+        var loweredTerm = term.ToLower();
+
+        var results = Task.WhenAll(Task.Run(() => _context.Products
+                .Where(p => p.Title.ToLower().Contains(loweredTerm) ||
+                            p.Description.ToLower().Contains(loweredTerm))),
+
+            Task.Run(() => _context.Products
+                .Where(p => p.Title.ToLower().Contains(loweredTerm) ||
+                            p.Description.ToLower().Contains(loweredTerm))
+                .Include(p => p.Variants)
+                .Skip((page - 1) * size)
+                .Take(size)
+                .ToListAsync())
+        );
+
+        return new ProductSearch();
     }
 }

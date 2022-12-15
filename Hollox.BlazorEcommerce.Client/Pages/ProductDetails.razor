@@ -15,7 +15,7 @@ else
 			<p>@Product.Description</p>
 			@if (Product.Variants.Count > 1)
 			{
-				<select class="form-control" @onchange="OnProductVariantChange">
+				<select class="form-select" @onchange="OnProductVariantChange">
 					@foreach (var variant in Product.Variants)
 					{
 						<option value=@variant.ProductTypeId>@variant.ProductType.Name</option>

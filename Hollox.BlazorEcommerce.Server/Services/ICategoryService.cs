@@ -1,4 +1,4 @@
-﻿using Hollox.BlazorEcommerce.Shared;
+﻿using Hollox.BlazorEcommerce.Shared.Models;
 
 namespace Hollox.BlazorEcommerce.Server.Services;
 

@@ -1,6 +1,6 @@
 ﻿using Hollox.BlazorEcommerce.Server.Services;
 using Microsoft.AspNetCore.Mvc;
-using Hollox.BlazorEcommerce.Shared;
+using Hollox.BlazorEcommerce.Shared.Models;
 
 namespace Hollox.BlazorEcommerce.Server.Controllers;
 

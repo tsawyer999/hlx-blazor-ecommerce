@@ -1,6 +1,6 @@
 ﻿using Hollox.BlazorEcommerce.Server.Services;
 using Microsoft.AspNetCore.Mvc;
-using Hollox.BlazorEcommerce.Shared;
+using Hollox.BlazorEcommerce.Shared.Models;
 
 namespace Hollox.BlazorEcommerce.Server.Controllers;
 
@@ -42,5 +42,11 @@ public class ProductController : ControllerBase
         }
 
         return Ok(await _productService.GetProductsByCategorySlugAsync(slug.ToLower()));
+    }
+
+    [HttpGet("search/{term}")]
+    public async Task<ActionResult<ProductSearch>> GetProductByTerm([FromQuery] string term, [FromQuery] int page = 1, [FromQuery] int size = 10)
+    {
+        return Ok(await _productService.GetProductsBySearchTerm(term, page, size));
     }
 }

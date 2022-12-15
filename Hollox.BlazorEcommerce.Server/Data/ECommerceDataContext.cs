@@ -1,4 +1,4 @@
-﻿using Hollox.BlazorEcommerce.Shared;
+﻿using Hollox.BlazorEcommerce.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hollox.BlazorEcommerce.Server.Data

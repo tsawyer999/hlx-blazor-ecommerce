@@ -11,8 +11,18 @@ builder.Services.AddDbContext<ECommerceDataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("HolloxECommerce"));
 });
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+
+const string allowedOrigins = "allowedOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: allowedOrigins,
+        policyBuilder =>
+        {
+            policyBuilder.WithOrigins("*");
+        });
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -49,7 +59,6 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -61,11 +70,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseCors(allowedOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
+//app.MapRazorPages();
 app.MapControllers();
-app.MapFallbackToFile("index.html");
+//app.MapFallbackToFile("index.html");
 
 app.Run();
