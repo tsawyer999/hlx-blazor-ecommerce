@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Hollox.BlazorEcommerce.Shared.csproj" />
+    <ProjectReference Include="..\Repository\Hollox.BlazorECommerce.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
